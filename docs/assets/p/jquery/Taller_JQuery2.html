@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Animación Cubo</title>
+
+  <style>
+    div {
+      position: absolute;
+      background-color: rgb(0, 124, 248);
+      left: 50px;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      background-image: url('gifi.gif');
+      width: 300;
+      height: 300;
+
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(3000);
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <button id="left">Izq</button>
+  <button id="right">Der</button>
+  <div class="block"></div>
+
+  <script>
+    $("#right").click(function () {
+      $(".block").animate({ "left": "+=50px" }, "fast");
+    });
+
+    $("#left").click(function () {
+      $(".block").animate({ "left": "-=50px" }, "slow");
+    });
+  </script>
+  <br><br>
+  <a href="../../../page1.html">REGRESAR</a>
+</body>
+</html>
